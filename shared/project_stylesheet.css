@@ -1,0 +1,42 @@
+/* login formatting starts */
+#box{
+    min-height: 450px;
+}
+
+#vertical_line{
+    height: 300px;
+    border-right: 1px solid #000;
+    right: 50%;
+    padding: 10px;
+}
+
+#adminLogin a, #call2action a{
+    color:red;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+p, legend{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+legend{
+    font-size: 29.2px;
+}
+
+/* loging formatting ends */
+
+/* footer formatting */
+#sm li{
+    list-style-type: none;
+    display: inline-block;
+   
+    /* flex: auto;
+    flex-direction: row; */
+}
+
+#sm li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
