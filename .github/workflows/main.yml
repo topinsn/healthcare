@@ -12,9 +12,9 @@ jobs:
       uses: actions/checkout@v2
     
     - name: 📂 Sync files
-      uses: temidev.com.ng/FTP-Deploy-Action@4.3.3
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: ftp.temidev.com.ng
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: temidev.com.ng/
+        server-dir: test/temidev.com.ng/
