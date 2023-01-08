@@ -59,7 +59,7 @@
                     $donate_insert = new Country;
 
                     //call the function
-                    $donate_insert->insertDonation($name, $phone_number, $email, $amount, $transaction_id, $tx_ref);
+                    // $donate_insert->insertDonation($name, $phone_number, $email, $amount, $transaction_id, $tx_ref);
 
                     echo "Donation completed successfully. Thank you!";
                     header("Location: payment_success.php");
