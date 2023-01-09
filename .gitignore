@@ -6,3 +6,5 @@ test_keys_flutterwave.php
 test_keys_paystack.php
 test.php
 .gitignore
+shared/constant.php
+shared/constant_for_deploy.php

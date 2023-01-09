@@ -38,10 +38,9 @@
 		// create object of login
 		$obj = new User();
 
-		$obj->login($_POST['email'], $_POST['password']);
+		$new_obj = $obj->login($_POST['email'], $_POST['password']);
 
-		if ($obj === false) {
-
+		if ($new_obj === false) {
 			$error = "<div class = 'alert alert-danger'>Invalid login details</div>";
 
 		}else{
@@ -55,11 +54,15 @@
 ?>
 <div>
 	<?php
-			if(isset($_REQUEST['m'])){
-				$message = $_REQUEST['m'];
-				$new_message = "<div class = 'alert alert-danger'>" . $message . "</div>";
-				echo $new_message;
-			} 
+			if(isset($error)){
+				echo ($error);
+			}
+			
+			// if(isset($_REQUEST['m'])){
+			// 	$message = $_REQUEST['m'];
+			// 	$new_message = "<div class = 'alert alert-danger'>" . $message . "</div>";
+			// 	echo $new_message;
+			// } 
 			
 	?>
 </div>
