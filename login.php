@@ -35,30 +35,39 @@
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-	// create object of login
-	$obj = new User();
+		// create object of login
+		$obj = new User();
 
-	$obj->login($_POST['email'], $_POST['password']);
+		$obj->login($_POST['email'], $_POST['password']);
 
-	if ($obj == false) {
+		if ($obj === false) {
 
-		$error = "<div style='color:red'>Invalid details</div>";
+			$error = "<div class = 'alert alert-danger'>Invalid login details</div>";
 
-	}else{
+		}else{
 
-		header("Location: dashboard.php");
-		exit(); //this is inserted to stop the function
+			header("Location: dashboard.php");
+			exit(); //this is inserted to stop the function
+		}
+
 	}
 
-}
-
 ?>
-<div style="min-height: 30px;">
-	<!-- <input type="button" value="Logout" class="btn btn-danger" href="logout.php"> -->
+<div>
+	<?php
+			if(isset($_REQUEST['m'])){
+				$message = $_REQUEST['m'];
+				$new_message = "<div class = 'alert alert-danger'>" . $message . "</div>";
+				echo $new_message;
+			} 
+			
+	?>
 </div>
 <div class="container-fluid" id="box">
+		
 	<div class="row">
 		<div class="col-md-4 ms-md-2" id="vertical_line">
+			
 			<form action="" method="post">
 				<fieldset>
 					<legend class="text-center"><strong> Member Login </strong></legend>
