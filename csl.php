@@ -1,5 +1,5 @@
 <?php 
-	include_once("shared/constant.php");
+	require_once("shared/constant.php");
 
 	// class definition
 
@@ -325,7 +325,17 @@
                 while($row = $result->fetch_assoc()){
                     $records[]=$row;
                 }
-            }
+            }else{
+				echo "<div class='alert alert-danger'>No record found in our database.<br> Kindly join us to make our databse bigger and ready to serve you. <br> You can consider the following suggestions to make us serve you better:
+					<ul>
+						<li>Make sure all words are spelled correctly.</li>
+						<li>Try different keywords.</li>
+						<li>Try more general keywords.</li>
+						<li>Try fewer keywords.</li>
+					</ul>
+				</div>";
+
+			}
 			return $result;
 		}
 

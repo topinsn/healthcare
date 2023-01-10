@@ -49,6 +49,10 @@
                     header("Location:index.php");
                 } 
 
+                if ($output === ''){
+                    echo "<div class='alert alert-danger text-center'>Jesu No record found in our database.<br> Kindly join us to make our databse bigger and ready to serve you. <br> Thank you</div>";
+                }
+
                 $number = 0;
                 foreach ($output as $key => $value){
                    $number++;
