@@ -311,12 +311,13 @@
 		// end count cases
 
 		public function Search($query){
-			$stmt = $this->conn->prepare("SELECT * FROM reported_cases JOIN disease ON reported_cases.disease_id = disease.disease_id JOIN lga ON reported_cases.lga_id = lga.lga_id JOIN country ON reported_cases.country_id = country.country_id JOIN state ON reported_cases.state_id=state.state_id WHERE (disease.disease_name LIKE '%$query%') ");
-
-			// execute statment
+			$limit = 10; // number of results per page
+			$page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // current page
+			$start = ($page - 1) * $limit; // starting point
+			
+			$stmt = $this->conn->prepare("SELECT * FROM reported_cases JOIN disease ON reported_cases.disease_id = disease.disease_id JOIN lga ON reported_cases.lga_id = lga.lga_id JOIN country ON reported_cases.country_id = country.country_id JOIN state ON reported_cases.state_id=state.state_id WHERE (disease.disease_name LIKE '%$query%') LIMIT ?, ?");
+			$stmt->bind_param("ii", $start, $limit);
 			$stmt->execute();
-
-			// get result
 			$result = $stmt->get_result();
 			
 			// fetch result
@@ -338,6 +339,19 @@
 			}
 			return $result;
 		}
+
+		// start count function
+
+		public function SearchCount($query){
+		    $stmt = $this->conn->prepare("SELECT COUNT(*) as total FROM reported_cases JOIN disease ON reported_cases.disease_id = disease.disease_id JOIN lga ON reported_cases.lga_id = lga.lga_id JOIN country ON reported_cases.country_id = country.country_id JOIN state ON reported_cases.state_id=state.state_id WHERE (disease.disease_name LIKE '%$query%')");
+		    $stmt->execute();
+		    $result = $stmt->get_result();
+		    $row = $result->fetch_assoc();
+		    return $row['total'];
+}
+
+
+		// end count function
 
 		// start list editors
 		public function listEditors(){
