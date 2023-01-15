@@ -17,4 +17,5 @@
     // reference the object
     
     $stmt = $obj->deleteCases($listId);
+    
 ?>

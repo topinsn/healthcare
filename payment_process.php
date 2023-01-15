@@ -47,7 +47,8 @@
 
                     //now that it confirms that all is correct, I will add the information gotten into the database
                     //since the server has been inititated above, i will include the class and call the function created 
-
+                    include_once "csl.php";
+                    $donate_insert = new Country;
                     //check if insertion is successful
                     if($donate_insert == false){
                         $error = "<div style='color:red'>Error inserting details</div>";
@@ -55,8 +56,7 @@
                     }else{
                     //then, go ahead and confirm successful transaction
                     var_dump($_GET);
-                    include_once "csl.php";
-                    $donate_insert = new Country;
+                    
 
                     //call the function
                     // $donate_insert->insertDonation($name, $phone_number, $email, $amount, $transaction_id, $tx_ref);

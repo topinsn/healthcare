@@ -30,28 +30,26 @@
             <?php 
                 if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['search'] != '') {
                     //var_dump($_GET['search']);
-                $query = $_GET['search'];
-                                // validate input
-                
-                                // sanitize input        
-                $query = sanitizeInput($query);
-                
-                // include function
-                include_once("csl.php");
-                            
-                //create object of the user class
-                $obj = new Country();
-                            
-                //access search method from the class
-                //var_dump($query);
-                $output = $obj->Search($query);   
+                    $query = $_GET['search'];
+                                    // validate input
+                    // var_dump($query);
+                                    // sanitize input        
+                    $query = sanitizeInput($query);
+                    
+                    // include function
+                    include_once("csl.php");
+                                
+                    //create object of the user class
+                    $obj = new Country();
+                                
+                    //access search method from the class
+                    //var_dump($query);
+                    $output = $obj->Search($query); 
+                    $limit = 10; // number of results per page
+                    $total_pages = ceil($obj->SearchCount($query) / $limit); // total number of pages 
                 }else{  
                     header("Location:index.php");
                 } 
-
-                if ($output === ''){
-                    echo "<div class='alert alert-danger text-center'>Jesu No record found in our database.<br> Kindly join us to make our databse bigger and ready to serve you. <br> Thank you</div>";
-                }
 
                 $number = 0;
                 foreach ($output as $key => $value){
@@ -71,9 +69,31 @@
             
             <?php 
                 }
+
             ?>
+
+
         </tbody>
+
+        
     </table>
+     <nav aria-label="Page navigation example"> 
+                <ul class="pagination justify-content-center">
+                  <li class="page-item <?php if($page == 1) echo 'disabled'; ?>">
+                    <a class="page-link" href="search.php?search=<?php echo $query; ?>&page=<?php echo $page-1; ?>" tabindex="-1">Previous</a>
+                  </li>
+
+                <?php for($i = 1; $i <= $total_pages; $i++){ ?>
+                  <li class="page-item <?php if($i == $page) echo 'active'; ?>">
+                      <a class="page-link" href="search.php?search=<?php echo $query; ?>&page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                  </li>
+                <?php } ?>
+                    <li class="page-item <?php if($page == $total_pages) echo 'disabled'; ?>">
+                        <a class="page-link" href="search.php?search=<?php echo $query; ?>&page=<?php echo $page+1; ?>">Next</a>
+                    </li>
+
+                  </ul>
+            </nav>
     
 </main>
 
