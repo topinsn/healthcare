@@ -1,6 +1,6 @@
 shared/bootstrap/
 fontawesome/
-algo
+algo.php
 algo.pub
 test_keys_flutterwave.php
 test_keys_paystack.php
