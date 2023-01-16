@@ -1,10 +1,11 @@
 shared/bootstrap/
 fontawesome/
 algo.php
-algo.pub
+algo.txt
 test_keys_flutterwave.php
 test_keys_paystack.php
 test.php
 shared/constant.php
 shared/constant_for_deploy.php
 pagination.php
+.DS_Store/
