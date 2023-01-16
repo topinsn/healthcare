@@ -49,7 +49,7 @@
                         // loop thrugh the array
 
 
-                        if (count($listR) > 0){
+                        // if (count($listR) > 0){
                             foreach ($listR as $key => $value){
                                 $listId = $value['rd_id'];
                            
@@ -69,7 +69,7 @@
 
                     <?php
                          }
-                        }
+                        // }
                     ?>
                 </tbody>
             </table>
