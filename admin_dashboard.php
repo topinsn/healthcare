@@ -107,7 +107,7 @@
     </div>
 </main>
 
-<div class="cointainer fluid flex-column">
+<div class="cointainer-fluid flex-column">
     
 
     <div class="row">
