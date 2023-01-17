@@ -19,15 +19,13 @@
                     <li class="text-center"><a href="list_editors.php"><strong>View Editors</strong></a></li>
                 </ul>
         </div>
-        <div class="col-md-11 table-responsive-md">
 
         <?php 
         // var_dump($_POST);
         // var_dump($_SESSION);
         ?>
-        
-            <div class="row">
-                <div class="table-responsive-md">
+             
+                <div class="row table-responsive-md">
                     <table class="table table-hover table-striped table-active caption-top table-bordered ">
                         <caption class="text-center">List of all Recorded Cases </caption>
                         <thead class= "table-light">
@@ -85,9 +83,6 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-        
-            
         </div>
     </div>
 </div>
