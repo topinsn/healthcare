@@ -10,7 +10,7 @@
 <main>
 <div class="container-fuid">
     <div class="row">
-        <div class="col-md-1 bg-warning" id="sidenav">
+        <div class="col-md-2 bg-warning" id="sidenav">
                 <ul>
                     <li class="text-center"><a href="add_input.php"><strong> New Entry</strong></a></li>
                     <hr>
@@ -19,14 +19,8 @@
                     <li class="text-center"><a href="list_editors.php"><strong>View Editors</strong></a></li>
                 </ul>
         </div>
-
-        <?php 
-        // var_dump($_POST);
-        // var_dump($_SESSION);
-        ?>
-             
-                <div class="row table-responsive-md">
-                    <table class="table table-hover table-striped table-active caption-top table-bordered ">
+            <div class="table-responsive-md table-responsive-sm">
+                    <table class="table table-responsive table-hover table-striped table-active caption-top table-bordered ">
                         <caption class="text-center">List of all Recorded Cases </caption>
                         <thead class= "table-light">
                             <tr class="text-center">
