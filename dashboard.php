@@ -1,5 +1,5 @@
 <?php
-    include_once('editor_user_header.php');
+    include_once('editor_newheader.php');
 ?>
 
 <head>

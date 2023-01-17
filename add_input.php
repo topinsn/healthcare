@@ -233,7 +233,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="../jquery/jquery.js"></script>
+    <script type="text/javascript" src="jquery/jquery.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 // get state based on country selected
