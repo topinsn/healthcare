@@ -13,7 +13,7 @@
 
 <!-- create buttons -->
 <main>
-    <div class="cointainer fluid flex-column">
+    <div class="cointainer-fluid">
         <div class="row">
             <div class="col-md-3" id="menu">
                 <ul>
