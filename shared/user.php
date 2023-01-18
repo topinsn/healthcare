@@ -29,8 +29,8 @@ class User{
 
         if($this->dbconn->connect_error){
             die("failed: ".$this->dbconn->connect_error);
-        }else{
-            echo "connection successful";
+        // }else{
+        //     echo "connection successful";
         }
     }
 
